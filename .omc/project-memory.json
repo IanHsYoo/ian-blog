@@ -1,0 +1,248 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1775666788389,
+  "projectRoot": "/Users/ian/workspace/ian-blog",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "next",
+        "version": "14.2.5",
+        "category": "fullstack"
+      },
+      {
+        "name": "react",
+        "version": "18.3.1",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "18.3.1",
+        "category": "frontend"
+      }
+    ],
+    "packageManager": "yarn",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "yarn build",
+    "testCommand": null,
+    "lintCommand": "yarn lint",
+    "devCommand": "yarn dev",
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint",
+      "type-check": "tsc --noEmit",
+      "format": "prettier --write ."
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "src"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "aidlc-docs": {
+      "path": "aidlc-docs",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1775666788377,
+      "keyFiles": [
+        "aidlc-state.md",
+        "audit.md",
+        "project-constitution.md"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 0,
+      "lastAccessed": 1775666788379,
+      "keyFiles": []
+    },
+    "src/app": {
+      "path": "src/app",
+      "purpose": "Application code",
+      "fileCount": 2,
+      "lastAccessed": 1775666788379,
+      "keyFiles": [
+        "layout.tsx",
+        "page.tsx"
+      ]
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 0,
+      "lastAccessed": 1775666788379,
+      "keyFiles": []
+    },
+    "src/lib": {
+      "path": "src/lib",
+      "purpose": "Library code",
+      "fileCount": 1,
+      "lastAccessed": 1775666788380,
+      "keyFiles": [
+        "utils.ts"
+      ]
+    },
+    "src/types": {
+      "path": "src/types",
+      "purpose": "Type definitions",
+      "fileCount": 1,
+      "lastAccessed": 1775666788380,
+      "keyFiles": [
+        "index.ts"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "aidlc-docs/audit.md",
+      "accessCount": 5,
+      "lastAccessed": 1775669293073,
+      "type": "file"
+    },
+    {
+      "path": "aidlc-docs/inception/requirements/requirement-verification-questions.md",
+      "accessCount": 3,
+      "lastAccessed": 1775668768873,
+      "type": "file"
+    },
+    {
+      "path": "aidlc-docs/aidlc-state.md",
+      "accessCount": 3,
+      "lastAccessed": 1775668880282,
+      "type": "file"
+    },
+    {
+      "path": "aidlc-docs/inception/requirements/requirements.md",
+      "accessCount": 3,
+      "lastAccessed": 1775669103811,
+      "type": "file"
+    },
+    {
+      "path": ".claude/CLAUDE.md",
+      "accessCount": 2,
+      "lastAccessed": 1775667199657,
+      "type": "file"
+    },
+    {
+      "path": "aidlc-docs/inception/plans/story-generation-plan.md",
+      "accessCount": 2,
+      "lastAccessed": 1775669284305,
+      "type": "file"
+    },
+    {
+      "path": ".aidlc-rule-details/common/welcome-message.md",
+      "accessCount": 1,
+      "lastAccessed": 1775667399685,
+      "type": "file"
+    },
+    {
+      "path": ".aidlc-rule-details/common/session-continuity.md",
+      "accessCount": 1,
+      "lastAccessed": 1775667399748,
+      "type": "file"
+    },
+    {
+      "path": ".aidlc-rule-details/common/process-overview.md",
+      "accessCount": 1,
+      "lastAccessed": 1775667399840,
+      "type": "file"
+    },
+    {
+      "path": ".aidlc-rule-details/inception/workspace-detection.md",
+      "accessCount": 1,
+      "lastAccessed": 1775667400016,
+      "type": "file"
+    },
+    {
+      "path": ".aidlc-rule-details/common/question-format-guide.md",
+      "accessCount": 1,
+      "lastAccessed": 1775667400044,
+      "type": "file"
+    },
+    {
+      "path": ".aidlc-rule-details/common/content-validation.md",
+      "accessCount": 1,
+      "lastAccessed": 1775667400075,
+      "type": "file"
+    },
+    {
+      "path": ".aidlc-rule-details/extensions/security/baseline/security-baseline.md",
+      "accessCount": 1,
+      "lastAccessed": 1775667400427,
+      "type": "file"
+    },
+    {
+      "path": "aidlc-docs/inception/application-design/application-design.md",
+      "accessCount": 1,
+      "lastAccessed": 1775667415945,
+      "type": "file"
+    },
+    {
+      "path": "aidlc-docs/inception/plans/execution-plan.md",
+      "accessCount": 1,
+      "lastAccessed": 1775667416462,
+      "type": "file"
+    },
+    {
+      "path": ".aidlc-rule-details/inception/requirements-analysis.md",
+      "accessCount": 1,
+      "lastAccessed": 1775667489975,
+      "type": "file"
+    },
+    {
+      "path": ".aidlc-rule-details/inception/user-stories.md",
+      "accessCount": 1,
+      "lastAccessed": 1775669103668,
+      "type": "file"
+    },
+    {
+      "path": "aidlc-docs/inception/plans/user-stories-assessment.md",
+      "accessCount": 1,
+      "lastAccessed": 1775669140508,
+      "type": "file"
+    },
+    {
+      "path": "aidlc-docs/inception/user-stories/personas.md",
+      "accessCount": 1,
+      "lastAccessed": 1775669317746,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
