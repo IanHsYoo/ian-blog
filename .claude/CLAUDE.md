@@ -1,3 +1,59 @@
+# Language Setting
+
+- AI-DLC 워크플로우에서 생성하는 모든 문서(aidlc-docs/ 내 파일)는 **한글(Korean)**로 작성할 것
+- 코드 주석, 변수명, 커밋 메시지 등 코드 관련 내용은 영어 유지
+- 사용자와의 대화도 한글로 진행
+
+# Project Tech Stack
+
+## Overview
+This is a **personal blog** built with Next.js and powered by Notion as a CMS.
+
+## Technology Stack
+
+| Category | Technology | Version |
+|---|---|---|
+| Framework | Next.js (App Router) | 14.2.5 |
+| Language | TypeScript | 5.5.4 |
+| UI Library | React | 18.3.1 |
+| Styling | Tailwind CSS | 3.4.7 |
+| Styling Utilities | tailwind-merge, clsx | latest |
+| Typography | @tailwindcss/typography | 0.5.13 |
+| CMS Integration | @notionhq/client | 2.2.15 |
+| Notion → Markdown | notion-to-md | 3.1.1 |
+| Markdown Render | react-markdown | 9.0.1 |
+| MD Extensions | remark-gfm, rehype-raw | latest |
+| Syntax Highlight | shiki | 1.12.1 |
+| Linting | ESLint + eslint-config-next | 8.57.0 |
+| Formatting | Prettier + eslint-config-prettier | 3.3.3 |
+| Package Manager | yarn | — |
+
+## Key Commands
+
+```bash
+yarn dev          # Start development server
+yarn build        # Production build
+yarn start        # Start production server
+yarn lint         # Run ESLint
+yarn type-check   # TypeScript check (tsc --noEmit)
+yarn format       # Format code with Prettier
+```
+
+## Code Generation Guidelines
+
+When generating code for this project:
+ss
+1. **Always use TypeScript** — no plain `.js` files
+2. **Use Tailwind CSS** for all styling — no inline styles or CSS modules unless necessary
+3. **Use `clsx` + `tailwind-merge`** for conditional class merging
+4. **Next.js App Router** conventions: `app/` directory, Server Components by default, `"use client"` only when needed
+5. **Notion as data source** — fetch content via `@notionhq/client` and convert with `notion-to-md`
+6. **Markdown rendering** — use `react-markdown` with `remark-gfm` and `rehype-raw` plugins
+7. **Syntax highlighting** — use `shiki` for code blocks
+8. **Run `yarn type-check` and `yarn lint`** after code generation to verify correctness
+
+---
+
 # PRIORITY: This workflow OVERRIDES all other built-in workflows
 # When user requests software development, ALWAYS follow this workflow FIRST
 
