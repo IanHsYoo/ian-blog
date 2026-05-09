@@ -165,3 +165,94 @@
 **AI Prompt**: "NFR Requirements 산출물을 검토 후 승인하면 Infrastructure Design 단계로 진행합니다."
 **Status**: Pending Approval
 **Context**: blog-v2 NFR 산출물 생성 완료.
+
+---
+
+## Plan 작성 요청 — Notion DB 연동
+**Timestamp**: 2026-05-08T01:00:00Z
+**User Input**: "/oh-my-claudecode:plan notion의 database와 연결해서 포스팅 하는 blog 개발 진행중. 이에 대한 plan 추가"
+**AI Response**: Interview Mode 진입. 워크스페이스/요구사항/설계 문서 검토 후 3개 질문 진행.
+**Context**: CONSTRUCTION - blog-v2 plan 작성 단계.
+
+---
+
+## Plan 작성 인터뷰 — Q1 방향성
+**Timestamp**: 2026-05-08T01:02:00Z
+**User Input**: "Notion + 마크다운 하이브리드"
+**AI Response**: v2 결정대로 어댑터 패턴으로 진행. Notion + Markdown 양쪽 소스 통합 plan 수립.
+**Context**: Plan 작성 - 방향성 결정.
+
+---
+
+## Plan 작성 인터뷰 — Q2 범위
+**Timestamp**: 2026-05-08T01:03:00Z
+**User Input**: "v2 전체 완성(All FRs)"
+**AI Response**: FR-01~FR-09 전체를 plan에 포함. 인프라(Terraform/CI)는 별도 plan으로 분리.
+**Context**: Plan 작성 - 범위 결정.
+
+---
+
+## Plan 작성 인터뷰 — Q3 소스 우선순위
+**Timestamp**: 2026-05-08T01:04:00Z
+**User Input**: "소스 분리(겹침 금지)"
+**AI Response**: 동일 slug가 양쪽 존재 시 빌드 실패 정책 채택. SlugCollisionError 사전 검증 로직 plan에 포함.
+**Context**: Plan 작성 - 충돌 정책 결정.
+
+---
+
+## Plan 산출물 생성
+**Timestamp**: 2026-05-08T01:09:00Z
+**AI Response**: 상위 plan `.omc/plans/notion-markdown-hybrid-v2-plan.md` 생성 (10단계, A~E 수용 기준, 위험 8개, 검증 6단계).
+**Context**: Plan 작성 완료.
+
+---
+
+## 추가 산출물 요청 — Code Generation Plan + Notion 가이드
+**Timestamp**: 2026-05-08T01:10:00Z
+**User Input**: "- 개발작업 진행및 code generation plan 에도 옮길 것\n- notion에서 어떤 작업을 해서 블로그와 연동해야 하는지도 별도 가이드를 markdown에도 생성하고 현재 내용에도 출력"
+**AI Response**:
+1. `aidlc-docs/construction/blog-v2/notion-setup-guide.md` 생성 — Integration 생성/DB 스키마/공유/ENV/검증 10단계 + 트러블슈팅 + 보안 체크리스트.
+2. `aidlc-docs/construction/plans/blog-v2-code-generation-plan.md` 생성 — Phase G~O 39 step 체크리스트.
+3. 가이드 핵심 내용 사용자에게 요약 출력.
+4. 개발 작업 Phase G~J 실행 시작.
+**Context**: CONSTRUCTION - blog-v2 Code Generation, Phase G~J 실행.
+
+---
+
+## Phase G 실행 — 도메인 타입/인터페이스 확장
+**Timestamp**: 2026-05-08T01:12:00Z
+**AI Response**:
+- `src/types/index.ts`: `BlogPost`에 `category: string`, `source: ContentSource` 필드 추가.
+- `src/lib/content/types.ts` 생성: `RawPost`, `ContentSourceAdapter`, `SlugCollisionError` 정의.
+**Context**: Phase G 완료.
+
+---
+
+## Phase H 실행 — 마크다운 어댑터
+**Timestamp**: 2026-05-08T01:14:00Z
+**AI Response**:
+- `package.json`: `gray-matter`, `glob` 추가 → `yarn add` 완료 (glob@13.0.6, gray-matter@4.0.3).
+- `src/lib/content/adapters/markdown-adapter.ts` 생성 — frontmatter 파서 + Date 객체 강제 변환(coerceDate).
+- `content/posts/welcome-to-blog.md` 검증용 샘플 생성.
+**Context**: Phase H 완료.
+
+---
+
+## Phase I 실행 — Notion 어댑터 리팩터링
+**Timestamp**: 2026-05-08T01:16:00Z
+**AI Response**:
+- `src/lib/content/adapters/notion-adapter.ts` 생성 — `Category` select 속성 핸들러 추가, `mapPageToRawPost` 정규화 책임을 repository로 이관.
+- `src/lib/notion/` 디렉토리 삭제 (deprecated).
+**Context**: Phase I 완료.
+
+---
+
+## Phase J 실행 — Repository + 회귀 게이트
+**Timestamp**: 2026-05-08T01:18:00Z
+**AI Response**:
+- `src/lib/content/normalize.ts` 생성 — RawPost→BlogPost 정규화, `assertNoSlugCollisions` 슬러그 충돌 감지.
+- `src/lib/content/repository.ts` 생성 — 어댑터 통합 진입점 7개 메서드 (getPublishedPosts, getPostBySlug, getAllSlugs, getAllTags, getAllCategories, getPostsByTag, getPostsByCategory).
+- `src/app/page.tsx` import 경로를 `@/lib/content/repository`로 변경.
+- `.eslintrc.json` 신규 생성 (lint 게이트 동작 가능하도록).
+- 회귀 검증: `yarn type-check` ✓, `yarn lint` ✓, `yarn build` ✓ (정적 export 4 페이지 생성).
+**Context**: Phase J 완료. 회귀 게이트 통과. Phase K(Blog 라우트) 진입 대기.

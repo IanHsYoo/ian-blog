@@ -13,6 +13,8 @@
   "dependencies": {
     "@notionhq/client": "^2.2.15",
     "clsx": "^2.1.1",
+    "glob": "^13.0.6",
+    "gray-matter": "^4.0.3",
     "next": "14.2.5",
     "notion-to-md": "^3.1.1",
     "react": "^18.3.1",
@@ -24,6 +26,7 @@
     "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20.14.11",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -33,7 +36,6 @@
     "eslint-config-prettier": "^9.1.0",
     "postcss": "^8.4.40",
     "prettier": "^3.3.3",
-    "@tailwindcss/typography": "^0.5.13",
     "tailwindcss": "^3.4.7",
     "typescript": "^5.5.4"
   }

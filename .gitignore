@@ -19,6 +19,9 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Claude memory
+.claude/
+
 # Terraform state (use remote backend)
 terraform/.terraform/
 terraform/terraform.tfstate

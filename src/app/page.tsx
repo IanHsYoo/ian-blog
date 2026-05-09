@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { PostList } from '@/components/blog/PostList'
-import { getPublishedPosts } from '@/lib/notion/queries'
+import { getPublishedPosts } from '@/lib/content/repository'
 
 export const metadata: Metadata = {
   title: process.env.NEXT_PUBLIC_SITE_NAME ?? 'Blog',

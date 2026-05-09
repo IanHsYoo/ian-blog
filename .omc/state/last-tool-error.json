@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"ls -la /Users/ian/workspace/ian-blog/.eslintrc* 2>&1; ls -la /Users/ian/workspace/ian-blog/eslint.config* 2>&1\",\"description\":\"Check for existing eslint config files\"}",
+  "error": "Exit code 1\n(eval):1: no matches found: /Users/ian/workspace/ian-blog/.eslintrc*\n(eval):1: no matches found: /Users/ian/workspace/ian-blog/eslint.config*",
+  "timestamp": "2026-05-07T16:29:12.514Z",
+  "retry_count": 1
+}
