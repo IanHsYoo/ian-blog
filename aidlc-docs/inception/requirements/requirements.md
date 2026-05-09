@@ -107,7 +107,7 @@
 
 | 제약사항 | 값 |
 |---|---|
-| 프레임워크 | Next.js 14 (App Router, `output: 'export'`) |
+| 프레임워크 | Next.js 16 (App Router, `output: 'export'`) |
 | 언어 | TypeScript (strict) |
 | 스타일링 | Tailwind CSS |
 | 콘텐츠 소스 (v1) | 로컬 마크다운 파일 (frontmatter) |

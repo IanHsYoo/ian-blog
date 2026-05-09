@@ -4,7 +4,7 @@
 
 | 영역 | 결정 | 근거 |
 |---|---|---|
-| 프레임워크 | Next.js 14 (App Router) 유지 | 기존 코드 자산 활용, 정적 export 지원 |
+| 프레임워크 | Next.js 16 (App Router) 업그레이드 | 최신 안정 버전(16.2.3), React 19 지원, 성능/번들 개선 |
 | 언어 | TypeScript strict 유지 | 타입 안정성, 유지보수성 향상 |
 | 스타일 | Tailwind CSS 유지 | 반응형/디자인 일관성 확보 |
 | 콘텐츠 소스 | Markdown-first + Adapter 패턴 | 빌드 안정성 및 콘텐츠 관리 단순화 |

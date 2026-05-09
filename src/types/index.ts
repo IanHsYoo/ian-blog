@@ -1,11 +1,15 @@
+export type ContentSource = 'notion' | 'markdown'
+
 export interface BlogPost {
   id: string
   title: string
   slug: string
   description: string
+  category: string
   tags: string[]
   publishedDate: string // ISO 8601 date string
   coverImage: string | null
+  source: ContentSource
   readingTime?: number // minutes, computed from content word count
   content?: string // Markdown string — populated only on detail page
 }
